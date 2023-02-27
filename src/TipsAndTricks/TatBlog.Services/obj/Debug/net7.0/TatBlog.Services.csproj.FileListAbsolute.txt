@@ -1,0 +1,17 @@
+F:\MinhNhat12\Năm 3\HKII\Advanced Web Application Development\Lab01\TipsAndTricks\TatBlog.Services\bin\Debug\net7.0\TatBlog.Services.deps.json
+F:\MinhNhat12\Năm 3\HKII\Advanced Web Application Development\Lab01\TipsAndTricks\TatBlog.Services\bin\Debug\net7.0\TatBlog.Services.dll
+F:\MinhNhat12\Năm 3\HKII\Advanced Web Application Development\Lab01\TipsAndTricks\TatBlog.Services\bin\Debug\net7.0\TatBlog.Services.pdb
+F:\MinhNhat12\Năm 3\HKII\Advanced Web Application Development\Lab01\TipsAndTricks\TatBlog.Services\bin\Debug\net7.0\TatBlog.Core.dll
+F:\MinhNhat12\Năm 3\HKII\Advanced Web Application Development\Lab01\TipsAndTricks\TatBlog.Services\bin\Debug\net7.0\TatBlog.Data.dll
+F:\MinhNhat12\Năm 3\HKII\Advanced Web Application Development\Lab01\TipsAndTricks\TatBlog.Services\bin\Debug\net7.0\TatBlog.Core.pdb
+F:\MinhNhat12\Năm 3\HKII\Advanced Web Application Development\Lab01\TipsAndTricks\TatBlog.Services\bin\Debug\net7.0\TatBlog.Data.pdb
+F:\MinhNhat12\Năm 3\HKII\Advanced Web Application Development\Lab01\TipsAndTricks\TatBlog.Services\obj\Debug\net7.0\TatBlog.Services.csproj.AssemblyReference.cache
+F:\MinhNhat12\Năm 3\HKII\Advanced Web Application Development\Lab01\TipsAndTricks\TatBlog.Services\obj\Debug\net7.0\TatBlog.Services.GeneratedMSBuildEditorConfig.editorconfig
+F:\MinhNhat12\Năm 3\HKII\Advanced Web Application Development\Lab01\TipsAndTricks\TatBlog.Services\obj\Debug\net7.0\TatBlog.Services.AssemblyInfoInputs.cache
+F:\MinhNhat12\Năm 3\HKII\Advanced Web Application Development\Lab01\TipsAndTricks\TatBlog.Services\obj\Debug\net7.0\TatBlog.Services.AssemblyInfo.cs
+F:\MinhNhat12\Năm 3\HKII\Advanced Web Application Development\Lab01\TipsAndTricks\TatBlog.Services\obj\Debug\net7.0\TatBlog.Services.csproj.CoreCompileInputs.cache
+F:\MinhNhat12\Năm 3\HKII\Advanced Web Application Development\Lab01\TipsAndTricks\TatBlog.Services\obj\Debug\net7.0\TatBlog.Services.csproj.CopyComplete
+F:\MinhNhat12\Năm 3\HKII\Advanced Web Application Development\Lab01\TipsAndTricks\TatBlog.Services\obj\Debug\net7.0\TatBlog.Services.dll
+F:\MinhNhat12\Năm 3\HKII\Advanced Web Application Development\Lab01\TipsAndTricks\TatBlog.Services\obj\Debug\net7.0\refint\TatBlog.Services.dll
+F:\MinhNhat12\Năm 3\HKII\Advanced Web Application Development\Lab01\TipsAndTricks\TatBlog.Services\obj\Debug\net7.0\TatBlog.Services.pdb
+F:\MinhNhat12\Năm 3\HKII\Advanced Web Application Development\Lab01\TipsAndTricks\TatBlog.Services\obj\Debug\net7.0\ref\TatBlog.Services.dll
