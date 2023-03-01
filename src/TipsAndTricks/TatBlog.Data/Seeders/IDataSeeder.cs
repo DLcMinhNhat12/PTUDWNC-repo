@@ -36,24 +36,56 @@ public class DataSeeder : IDataSeeder
 
     private IList<Author> AddAuthors() 
     {
-        var authors = new List<Author>()
-        {
-            new()
-            {
-                FullName = "Tran Dinh Minh Nhat",
-                UrlSlug = "tdm-nhat",
-                Email = "tdmnhat@gmail.com",
-                JoinedDate = new DateTime(2023, 2, 25)
-            },
+		var authors = new List<Author>()
+		{
+			new()
+			{
+				FullName = "Tran Dinh Minh Nhat",
+				UrlSlug = "tdm-nhat",
+				Email = "tdmnhat@gmail.com",
+				JoinedDate = new DateTime(2023, 2, 25)
+			},
 
-            new() 
-            {
+			new()
+			{
 				FullName = "Do Quoc Sang",
 				UrlSlug = "dq-sang",
 				Email = "dqsang@gmail.com",
 				JoinedDate = new DateTime(2021, 4, 30)
+			},
+
+			new()
+			{
+				FullName = "Mark J.Price",
+				UrlSlug = "mj-price",
+				Email = "mjprice@gmail.com",
+				JoinedDate = new DateTime(2022, 10, 30)
+			},
+
+			new()
+			{
+				FullName = "L.R Svekis & R. Pervival & Mvan Putten",
+				UrlSlug = "javascipt-beginer",
+				Email = "js@beginertopro@gmail.com",
+				JoinedDate = new DateTime(2022, 10, 30)
+			},
+
+			new()
+			{
+				FullName = "Nguyễn Hoàng Nguyên",
+				UrlSlug = "rosie-nguyen",
+				Email = "rosienguyen@gmail.com",
+				JoinedDate = new DateTime(2016, 2, 22)
+			},
+
+			new()
+			{
+				FullName = "Đậu Thị Quyên",
+				UrlSlug = "de-thoi-thanh-xuan-khong-nhat",
+				Email = "dauthiquyen@gmail.com",
+				JoinedDate = new DateTime(2022, 1, 30)
 			}
-        };
+		};
 
         _dbContext.Authors.AddRange(authors);
         _dbContext.SaveChanges();
@@ -120,8 +152,65 @@ public class DataSeeder : IDataSeeder
                 {
                     tags[0]
                 }
-            }
-        };
+            },
+
+			new()
+			{
+				Title = "C# 10 and .NET 6 – Modern\r\nCross-Platform Development\r\nSixth Edition",
+				ShortDescription = "Build apps, websites, and services with ASP.NET Core 6",
+				Description = "Blazor, and EF Core 6 using Visual Studio 2022 and\r\nVisual Studio Code",
+				Meta = "Copyright © 2021 Packt Publishing",
+				UrlSlug = "csharp-dotnet6-moderncross-platform-development",
+				Published = true,
+				PostedDate = new DateTime(2022, 10, 22, 10, 40, 0),
+				ModifiedDate = null,
+				ViewCount = 101,
+				Author = authors[0],
+				Category = categories[0],
+				Tags = new List<Tag>()
+				{
+					tags[0]
+				}
+			},
+
+			new()
+			{
+				Title = "JavaScript from Beginner to Professional",
+				ShortDescription = "Learn JavaScript quickly",
+				Description = "Learn JavaScript quickly by building fun, interactive, and dynamic web apps, games, and pages",
+				Meta = "Learn JavaScript quickly",
+				UrlSlug = "javascript-from-beginer-to-professional",
+				Published = true,
+				PostedDate = new DateTime(2022, 9, 9, 10, 10, 0),
+				ModifiedDate = null,
+				ViewCount = 101,
+				Author = authors[0],
+				Category = categories[0],
+				Tags = new List<Tag>()
+				{
+					tags[0]
+				}
+			},
+
+			new()
+			{
+				Title = "Tuổi trẻ đáng giá bao nhiêu?",
+				ShortDescription = "Hành trang để tuổi trẻ tươi đẹp hơn",
+				Description = "Tuổi trẻ gắn liền học - làm - đi ra sao?",
+				Meta = "Hành trang để tuổi trẻ tươi đẹp hơn",
+				UrlSlug = "tuoi-tre-dang-gia-bao-nhieu",
+				Published = true,
+				PostedDate = new DateTime(2017, 7, 9, 8, 10, 0),
+				ModifiedDate = null,
+				ViewCount = 10199,
+				Author = authors[0],
+				Category = categories[0],
+				Tags = new List<Tag>()
+				{
+					tags[0]
+				}
+			}
+		};
 
 		_dbContext.AddRange(posts);
 		_dbContext.SaveChanges();

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "onkajAUN2EYhgS2rDbHpW1jLmZQkhkn0YQUAxpUCUpUKmuZ80x1Xbi1n5veq2R4xK1NKcO2hh/LsTGZu+TRL/Q==",
+  "dgSpecHash": "p0d402adunDASouARmLKtA+gMAawkzd325qkevNv6+06lKPn9mhZKcUPDgcHdTZPNwGLWnmYm5lZofHINEhL0w==",
   "success": true,
-  "projectFilePath": "F:\\MinhNhat12\\Third Years\\HKII\\Advanced Web Application Development\\Lab01\\TipsAndTricks\\TatBlog.Services\\TatBlog.Services.csproj",
+  "projectFilePath": "F:\\MinhNhat12\\Third Years\\HKII\\Advanced Web Application Development\\Lab01\\PTUDWNC-repo\\src\\TipsAndTricks\\TatBlog.Services\\TatBlog.Services.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MN12-LAP\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\MN12-LAP\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
@@ -45,6 +45,7 @@
     "C:\\Users\\MN12-LAP\\.nuget\\packages\\system.globalization\\4.3.0\\system.globalization.4.3.0.nupkg.sha512",
     "C:\\Users\\MN12-LAP\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.21.0\\system.identitymodel.tokens.jwt.6.21.0.nupkg.sha512",
     "C:\\Users\\MN12-LAP\\.nuget\\packages\\system.io\\4.3.0\\system.io.4.3.0.nupkg.sha512",
+    "C:\\Users\\MN12-LAP\\.nuget\\packages\\system.linq.dynamic.core\\1.2.25\\system.linq.dynamic.core.1.2.25.nupkg.sha512",
     "C:\\Users\\MN12-LAP\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
     "C:\\Users\\MN12-LAP\\.nuget\\packages\\system.memory.data\\1.0.2\\system.memory.data.1.0.2.nupkg.sha512",
     "C:\\Users\\MN12-LAP\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
