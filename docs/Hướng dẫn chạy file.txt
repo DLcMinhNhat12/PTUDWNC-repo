@@ -1,0 +1,4 @@
+Database name: TatBlog
+Cách tạo database bằng PackageManagerConsole của NuGet
+1. Add-Migration InitialCreate: Khởi tạo Migration tự tạo database
+2. Update-Database -Verbose: tự động update database lên SQL Server
