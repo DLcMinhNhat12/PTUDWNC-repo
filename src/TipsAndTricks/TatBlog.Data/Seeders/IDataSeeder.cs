@@ -114,12 +114,15 @@ public class DataSeeder : IDataSeeder
     {
         var tags = new List<Tag>()
         {
-            new() {Name = "Google", Description = "Google applications", UrlSlug = ""},
-			new() {Name = "ASP.NET MVC", Description = "Google applications", UrlSlug = ""},
-			new() {Name = "Razor Page", Description = "Google applications", UrlSlug = ""},
-			new() {Name = "Blazor", Description = "Google applications", UrlSlug = ""},
-			new() {Name = "Deep Learning", Description = "Google applications", UrlSlug = ""},
-			new() {Name = "Neural Network", Description = "Google applications", UrlSlug = ""}
+            new() {Name = "Google", Description = "Google applications", UrlSlug = "google-application"},
+			new() {Name = "ASP.NET MVC", Description = "ASP.NET MVC", UrlSlug = "aspdotnet-mvc"},
+			new() {Name = "Razor Page", Description = "Razor Page", UrlSlug = "razor-page"},
+			new() {Name = "Blazor", Description = "Blazor", UrlSlug = "blazor"},
+			new() {Name = "Deep Learning", Description = "Deep Learning", UrlSlug = "deep-learning"},
+			new() {Name = "Neural Network", Description = "Neural Network", UrlSlug = "neural-networking"},
+			new() {Name = "Tuổi trẻ đáng giá bao nhiêu?", Description = "Tuổi trẻ đáng giá bao nhiêu?", UrlSlug = "tuoi-tre-dang-gia-bao-nhieu"},
+			new() {Name = "Để thời sinh viên không nhạt", Description = "Để thời sinh viên không nhạt", UrlSlug = "de-thoi-sinh vien-khong-nhat"},
+			new() {Name = "Clean Code", Description = "cleanCode", UrlSlug = "clean-code"},
 		};
 
 		_dbContext.AddRange(tags);

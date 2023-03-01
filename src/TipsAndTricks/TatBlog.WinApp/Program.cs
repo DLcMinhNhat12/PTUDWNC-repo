@@ -5,6 +5,9 @@ using TatBlog.Data.Seeders;
 using TatBlog.Services.Blogs;
 using TatBlog.WinApp;
 
+Console.OutputEncoding = Encoding.UTF8;
+Console.ForegroundColor = ConsoleColor.Green;
+
 var context = new BlogDbContext();
 //DataSeeder seeder = new DataSeeder(context);
 IBlogRepository blogRepo = new BloggRepository(context);
@@ -17,7 +20,28 @@ IBlogRepository blogRepo = new BloggRepository(context);
 //var posts = await blogRepo.GetPopularArticlesAsync(3);
 
 // Lấy danh sách chuyên mục
-var categories = await blogRepo.GetCategoriesAsync();
+//var categories = await blogRepo.GetCategoriesAsync();
+
+//Tạo đối tượng chứa params phân trang
+var pagingParams = new PagingParams
+				   {
+					   PageNumber = 1,
+					   PageSize = 5,
+					   SortColumn = "Name",
+					   SortOrder = "DESC"
+				   };
+
+//Lấy danh sách từ khóa
+var tagList = await blogRepo.GetPagedTagsAsync(pagingParams);
+
+Console.WriteLine("{0,-5}{1,-50}{2,10}",
+			"ID", "Name", "Count");
+
+foreach (var item in tagList)
+{
+	Console.WriteLine("{0,-5},{1,-50}{2,10}",
+		item.Id, item.Name, item.PostCount);
+}
 
 //var posts = context.Posts
 //	.Where(p => p.Published)
@@ -32,26 +56,23 @@ var categories = await blogRepo.GetCategoriesAsync();
 //		Category = p.Category.Name,
 //	}).ToList();
 
-Console.OutputEncoding = Encoding.UTF8;
-Console.ForegroundColor = ConsoleColor.Green;
-
 //Console.WriteLine("{0,-4}{1,-60}{2,-30}{3,12}",
 //	"ID", "Full Name", "Email", "Joined Date");
 
-Console.WriteLine("{0,-5}{1,-60}{2,10}",
-	"ID", "Name", "Count");
+//Console.WriteLine("{0,-5}{1,-60}{2,10}",
+//	"ID", "Name", "Count");
 
 //foreach (var author in authors)
 //{
-//	Console.WriteLine("{0,-4}{1,-60}{2,-30}{3,12:MM/dd/yyyy}",
+//	Console.WriteLine("{0,-4}{1,-50}{2,-30}{3,12:MM/dd/yyyy}",
 //		author.Id, author.FullName, author.Email, author.JoinedDate);
 //}
 
-foreach (var item in categories)
-{
-	Console.WriteLine("{0,-5}{1,-60}{2,10}",
-		item.Id, item.Name, item.PostCount);
-}
+//foreach (var item in categories)
+//{
+//	Console.WriteLine("{0,-5}{1,-60}{2,10}",
+//		item.Id, item.Name, item.PostCount);
+//}
 
 //foreach (var post in posts)
 //{
