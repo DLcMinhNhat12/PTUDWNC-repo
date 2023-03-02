@@ -24,20 +24,20 @@ IBlogRepository blogRepo = new BloggRepository(context);
 
 //Tạo đối tượng chứa params phân trang
 var pagingParams = new PagingParams
-				   {
-					   PageNumber = 1,
-					   PageSize = 5,
-					   SortColumn = "Name",
-					   SortOrder = "DESC"
-				   };
+{
+	PageNumber = 1,
+	PageSize = 5,
+	SortColumn = "Name",
+	SortOrder = "DESC"
+};
 
 //Lấy danh sách từ khóa
-var tagList = await blogRepo.GetPagedTagsAsync(pagingParams);
+var tagsList = await blogRepo.GetPagedTagsAsync(pagingParams);
 
 Console.WriteLine("{0,-5}{1,-50}{2,10}",
 			"ID", "Name", "Count");
 
-foreach (var item in tagList)
+foreach (var item in tagsList)
 {
 	Console.WriteLine("{0,-5},{1,-50}{2,10}",
 		item.Id, item.Name, item.PostCount);
