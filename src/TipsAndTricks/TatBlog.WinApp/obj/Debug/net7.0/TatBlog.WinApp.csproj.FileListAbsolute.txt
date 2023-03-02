@@ -112,6 +112,7 @@ F:\MinhNhat12\Third Years\HKII\Advanced Web Application Development\Lab01\PTUDWN
 F:\MinhNhat12\Third Years\HKII\Advanced Web Application Development\Lab01\PTUDWNC-repo\src\TipsAndTricks\TatBlog.WinApp\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
 F:\MinhNhat12\Third Years\HKII\Advanced Web Application Development\Lab01\PTUDWNC-repo\src\TipsAndTricks\TatBlog.WinApp\bin\Debug\net7.0\System.Drawing.Common.dll
 F:\MinhNhat12\Third Years\HKII\Advanced Web Application Development\Lab01\PTUDWNC-repo\src\TipsAndTricks\TatBlog.WinApp\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
+F:\MinhNhat12\Third Years\HKII\Advanced Web Application Development\Lab01\PTUDWNC-repo\src\TipsAndTricks\TatBlog.WinApp\bin\Debug\net7.0\System.Linq.Dynamic.Core.dll
 F:\MinhNhat12\Third Years\HKII\Advanced Web Application Development\Lab01\PTUDWNC-repo\src\TipsAndTricks\TatBlog.WinApp\bin\Debug\net7.0\System.Memory.Data.dll
 F:\MinhNhat12\Third Years\HKII\Advanced Web Application Development\Lab01\PTUDWNC-repo\src\TipsAndTricks\TatBlog.WinApp\bin\Debug\net7.0\System.Runtime.Caching.dll
 F:\MinhNhat12\Third Years\HKII\Advanced Web Application Development\Lab01\PTUDWNC-repo\src\TipsAndTricks\TatBlog.WinApp\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
@@ -146,4 +147,3 @@ F:\MinhNhat12\Third Years\HKII\Advanced Web Application Development\Lab01\PTUDWN
 F:\MinhNhat12\Third Years\HKII\Advanced Web Application Development\Lab01\PTUDWNC-repo\src\TipsAndTricks\TatBlog.WinApp\obj\Debug\net7.0\TatBlog.WinApp.pdb
 F:\MinhNhat12\Third Years\HKII\Advanced Web Application Development\Lab01\PTUDWNC-repo\src\TipsAndTricks\TatBlog.WinApp\obj\Debug\net7.0\TatBlog.WinApp.genruntimeconfig.cache
 F:\MinhNhat12\Third Years\HKII\Advanced Web Application Development\Lab01\PTUDWNC-repo\src\TipsAndTricks\TatBlog.WinApp\obj\Debug\net7.0\ref\TatBlog.WinApp.dll
-F:\MinhNhat12\Third Years\HKII\Advanced Web Application Development\Lab01\PTUDWNC-repo\src\TipsAndTricks\TatBlog.WinApp\bin\Debug\net7.0\System.Linq.Dynamic.Core.dll

@@ -23,25 +23,33 @@ IBlogRepository blogRepo = new BloggRepository(context);
 //var categories = await blogRepo.GetCategoriesAsync();
 
 //Tạo đối tượng chứa params phân trang
-var pagingParams = new PagingParams
-{
-	PageNumber = 1,
-	PageSize = 5,
-	SortColumn = "Name",
-	SortOrder = "DESC"
-};
+//var pagingParams = new PagingParams
+//{
+//	PageNumber = 1,
+//	PageSize = 5,
+//	SortColumn = "Name",
+//	SortOrder = "DESC"
+//};
 
 //Lấy danh sách từ khóa
-var tagsList = await blogRepo.GetPagedTagsAsync(pagingParams);
+//var tagsList = await blogRepo.GetPagedTagsAsync(pagingParams);
 
-Console.WriteLine("{0,-5}{1,-50}{2,10}",
-			"ID", "Name", "Count");
+//Console.WriteLine("{0,-5}{1,-50}{2,10}",
+//			"ID", "Name", "Count");
 
-foreach (var item in tagsList)
-{
-	Console.WriteLine("{0,-5},{1,-50}{2,10}",
-		item.Id, item.Name, item.PostCount);
-}
+//foreach (var item in tagsList)
+//{
+//	Console.WriteLine("{0,-5},{1,-50}{2,10}",
+//		item.Id, item.Name, item.PostCount);
+//}
+
+
+// Câu 1a
+
+var tags = await blogRepo.GetTagsAsync("clean");
+
+Console.WriteLine("{0,-5}{1,-30}", tags.Name, tags.UrlSlug);
+
 
 //var posts = context.Posts
 //	.Where(p => p.Published)
@@ -84,3 +92,4 @@ foreach (var item in tagsList)
 //	Console.WriteLine("Category: {0}", post.Category.Name);
 //	Console.WriteLine("".PadRight(80, '-'));
 //}
+

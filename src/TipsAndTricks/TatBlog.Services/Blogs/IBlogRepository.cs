@@ -44,6 +44,17 @@ public interface IBlogRepository
 	Task<IPagedList<TagItem>> GetPagedTagsAsync(
 		IPagingParams pagingParams,
 		CancellationToken cancellationToken = default);
+
+	/// <summary>
+	/// 	// Phần C
+	// Lấy định danh (slug) từ 1 thể tag
+	/// </summary>
+	/// <param name="slug"></param>
+	/// <param name="cancellationToken"></param>
+	/// <returns></returns>
+	Task<Tag> GetTagsAsync(
+		string slug,
+		CancellationToken cancellationToken = default);
 }
 
 public class BloggRepository : IBlogRepository
@@ -158,5 +169,13 @@ public class BloggRepository : IBlogRepository
 
 		return await tagQuery
 			.ToPagedListAsync(pagingParams, cancellationToken);
+	}
+
+	public async Task<Tag> GetTagsAsync(
+		string slug, CancellationToken cancellationToken = default)
+	{
+		return await _context.Set<Tag>()
+			.Where(t => t.UrlSlug == slug)
+			.FirstOrDefaultAsync(cancellationToken);
 	}
 }
