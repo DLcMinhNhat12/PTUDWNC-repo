@@ -55,6 +55,13 @@ public interface IBlogRepository
 	Task<Tag> GetTagsAsync(
 		string slug,
 		CancellationToken cancellationToken = default);
+
+	// Lấy danh sách tất cả các tag + số bài viết chứa bài đó
+	Task<IList<TagItem>> GetAllTagsList (
+		CancellationToken cancellationToken = default);
+
+	// Xóa 1 tag theo mã
+	Task<Tag> RemoveTagsByIdAsync(int removeTag, CancellationToken cancellation = default);
 }
 
 public class BloggRepository : IBlogRepository
@@ -177,5 +184,39 @@ public class BloggRepository : IBlogRepository
 		return await _context.Set<Tag>()
 			.Where(t => t.UrlSlug == slug)
 			.FirstOrDefaultAsync(cancellationToken);
+	}
+
+	public async Task<IList<TagItem>> GetAllTagsList(CancellationToken cancellationToken = default)
+	{
+		var tagQuery = _context.Set<Tag>()
+			.Select(x => new TagItem()
+			{
+				Id = x.Id,
+				Name = x.Name,
+				UrlSlug = x.UrlSlug,
+				Description = x.Description,
+				PostCount = x.Posts.Count(p => p.Published)
+			});
+
+		return await tagQuery.ToListAsync(cancellationToken);
+	}
+
+	public async Task<Tag> RemoveTagsByIdAsync(
+		int removeTag, CancellationToken cancellationToken = default)
+	{
+		var tag = await _context.Set<Tag>()
+			.FirstOrDefaultAsync(t => t.Id == removeTag, cancellationToken);
+
+		if (tag != null)
+		{
+			_context.Set<Tag>().Remove(tag);
+			await _context.SaveChangesAsync(cancellationToken);
+			Console.WriteLine("Đã xóa tag!");
+		}
+		else
+		{
+			Console.WriteLine("ID không tồn tại!");
+		}
+		return tag;
 	}
 }
