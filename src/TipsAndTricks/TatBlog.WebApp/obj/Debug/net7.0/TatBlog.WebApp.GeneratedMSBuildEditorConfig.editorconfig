@@ -1,0 +1,61 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = TatBlog.WebApp
+build_property.RootNamespace = TatBlog.WebApp
+build_property.ProjectDir = F:\MinhNhat12\Third Years\HKII\Advanced Web Application Development\Lab02\2014476-Lab02-Homework\TatBlog.WebApp\
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = F:\MinhNhat12\Third Years\HKII\Advanced Web Application Development\Lab02\2014476-Lab02-Homework\TatBlog.WebApp
+build_property._RazorSourceGeneratorDebug = 
+
+[F:/MinhNhat12/Third Years/HKII/Advanced Web Application Development/Lab02/2014476-Lab02-Homework/TatBlog.WebApp/Views/Blog/About.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xBYm91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/MinhNhat12/Third Years/HKII/Advanced Web Application Development/Lab02/2014476-Lab02-Homework/TatBlog.WebApp/Views/Blog/Contact.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xDb250YWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/MinhNhat12/Third Years/HKII/Advanced Web Application Development/Lab02/2014476-Lab02-Homework/TatBlog.WebApp/Views/Blog/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/MinhNhat12/Third Years/HKII/Advanced Web Application Development/Lab02/2014476-Lab02-Homework/TatBlog.WebApp/Views/Blog/_PostList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xfUG9zdExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/MinhNhat12/Third Years/HKII/Advanced Web Application Development/Lab02/2014476-Lab02-Homework/TatBlog.WebApp/Views/Blog/_TagList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xfVGFnTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/MinhNhat12/Third Years/HKII/Advanced Web Application Development/Lab02/2014476-Lab02-Homework/TatBlog.WebApp/Views/Shared/_Header.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9IZWFkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/MinhNhat12/Third Years/HKII/Advanced Web Application Development/Lab02/2014476-Lab02-Homework/TatBlog.WebApp/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/MinhNhat12/Third Years/HKII/Advanced Web Application Development/Lab02/2014476-Lab02-Homework/TatBlog.WebApp/Views/Shared/_SideBar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TaWRlQmFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/MinhNhat12/Third Years/HKII/Advanced Web Application Development/Lab02/2014476-Lab02-Homework/TatBlog.WebApp/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/MinhNhat12/Third Years/HKII/Advanced Web Application Development/Lab02/2014476-Lab02-Homework/TatBlog.WebApp/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/MinhNhat12/Third Years/HKII/Advanced Web Application Development/Lab02/2014476-Lab02-Homework/TatBlog.WebApp/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

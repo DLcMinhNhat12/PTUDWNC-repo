@@ -25,7 +25,7 @@ public class Post : IEntity
     public int CategoryId { get; set; }
 
 	// Mã tác giả bài viết
-	public string AuthorId { get; set; }
+	public int AuthorId { get; set; }
 
 	// Chuyên mục bài viết
 	public Category Category { get; set; }
