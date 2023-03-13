@@ -9,10 +9,10 @@ namespace TatBlog.WebApp.Controllers
 	{
 		private readonly IBlogRepository _blogRepository;
 
-        public BlogController(IBlogRepository blogRepository)
-        {
-            _blogRepository = blogRepository;
-        }
+		public BlogController(IBlogRepository blogRepository)
+		{
+			_blogRepository = blogRepository;
+		}
 
 		//public IActionResult Index()
 		//{
@@ -25,7 +25,7 @@ namespace TatBlog.WebApp.Controllers
 		public async Task<IActionResult> Index(
             [FromQuery(Name = "k")] string keyword = null,
             [FromQuery(Name = "p")] int pageNumber = 1,
-			[FromQuery(Name = "ps")] int pageSize = 10)
+			[FromQuery(Name = "ps")] int pageSize = 2)
 		{
 			//Tạo oject chứa điều kiện truy vấn
 			var postQuery = new PostQuery()

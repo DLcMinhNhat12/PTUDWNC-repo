@@ -1,11 +1,13 @@
-﻿<!-- Form tìm kiếm -->
+﻿<div class="my-4"></div>
+<!-- Form tìm kiếm -->
+<partial name="_SearchForm"></partial>
 <h1>
     Tìm kiếm bài viết
 </h1>
 
 <!-- Các chuyên mục/chủ đề -->
 <h1>
-    Các chủ đề
+    @await Component.InvokeAsync("CategoriesWidget")
 </h1>
 
 <!-- Top bài viết nổi bật -->

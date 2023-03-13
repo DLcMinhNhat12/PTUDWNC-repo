@@ -34,6 +34,14 @@ public class DataSeeder : IDataSeeder
     {
         new()
         {
+            FullName = "Robert C. Martin",
+            UrlSlug = "xl",
+            Email = "tdmnhat@gmail.com",
+            JoinedDate = new DateTime(2023, 2, 25)
+        },
+
+        new()
+        {
             FullName = "Tran Dinh Minh Nhat",
             UrlSlug = "tdm-nhat",
             Email = "tdmnhat@gmail.com",
@@ -78,6 +86,14 @@ public class DataSeeder : IDataSeeder
             UrlSlug = "de-thoi-thanh-xuan-khong-nhat",
             Email = "dauthiquyen@gmail.com",
             JoinedDate = new DateTime(2022, 1, 30)
+        },
+
+        new()
+        {
+            FullName = "Robin Sharma",
+            UrlSlug = "doi-ngan-dung-ngu-dai",
+            Email = "robinsharama@author.com",
+            JoinedDate = new DateTime(2022, 1, 30)
         }
     };
 
@@ -111,7 +127,7 @@ public class DataSeeder : IDataSeeder
         new() {Name = "Google", Description = "Google applications", UrlSlug = "google-application"},
         new() {Name = "ASP.NET MVC", Description = "ASP.NET MVC", UrlSlug = "aspdotnet-mvc"},
         new() {Name = "Razor Page", Description = "Razor Page", UrlSlug = "razor-page"},
-        new() {Name = "Blazor", Description = "Blazor", UrlSlug = "blazor"},
+        new() {Name = "Blazor", Description = "Data Structures", UrlSlug = "blazor-data-structure"},
         new() {Name = "Deep Learning", Description = "Deep Learning", UrlSlug = "deep-learning"},
         new() {Name = "Neural Network", Description = "Neural Network", UrlSlug = "neural-networking"},
         new() {Name = "Tuổi trẻ đáng giá bao nhiêu?", Description = "Tuổi trẻ đáng giá bao nhiêu?", UrlSlug = "tuoi-tre-dang-gia-bao-nhieu"},
@@ -142,7 +158,7 @@ public class DataSeeder : IDataSeeder
             Published = true,
             PostedDate = new DateTime(2021, 9, 30, 10, 20, 0),
             ModifiedDate = null,
-            ViewCount = 10,
+            ViewCount = 5031,
             Author = authors[0],
             Category = categories[0],
             Tags = new List<Tag>()
@@ -161,7 +177,7 @@ public class DataSeeder : IDataSeeder
             Published = true,
             PostedDate = new DateTime(2022, 10, 22, 10, 40, 0),
             ModifiedDate = null,
-            ViewCount = 101,
+            ViewCount = 2210,
             Author = authors[0],
             Category = categories[0],
             Tags = new List<Tag>()
@@ -180,7 +196,7 @@ public class DataSeeder : IDataSeeder
             Published = true,
             PostedDate = new DateTime(2022, 9, 9, 10, 10, 0),
             ModifiedDate = null,
-            ViewCount = 101,
+            ViewCount = 1010,
             Author = authors[0],
             Category = categories[0],
             Tags = new List<Tag>()
@@ -199,7 +215,26 @@ public class DataSeeder : IDataSeeder
             Published = true,
             PostedDate = new DateTime(2017, 7, 9, 8, 10, 0),
             ModifiedDate = null,
-            ViewCount = 10199,
+            ViewCount = 100202,
+            Author = authors[0],
+            Category = categories[0],
+            Tags = new List<Tag>()
+            {
+                tags[0]
+            }
+        },
+
+        new()
+        {
+            Title = "Để thời sinh viên không nhạt",
+            ShortDescription = "Sinh viên là khoảng thời gian đẹp và quý giá nhất",
+            Description = "Hành trang để sinh viên tự tin, trân trọng thời gian, học tập, rèn luyện... ",
+            Meta = "Sinh viên không nhạt",
+            UrlSlug = "de-thoi-sinh-vien-khong-nhat",
+            Published = true,
+            PostedDate = new DateTime(2016, 5, 12, 9, 10, 0),
+            ModifiedDate = null,
+            ViewCount = 2002,
             Author = authors[0],
             Category = categories[0],
             Tags = new List<Tag>()
