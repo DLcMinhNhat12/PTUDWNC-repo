@@ -18,7 +18,8 @@ public static class PagedListExtensions
 
 		var order = "ASC".Equals(
 			pagingParams.SortOrder, StringComparison.OrdinalIgnoreCase)
-			? pagingParams.SortOrder : "DESC";
+			? pagingParams.SortOrder 
+			: "DESC";
 
 		return $"{column} {order}";
 	}
@@ -60,6 +61,4 @@ public static class PagedListExtensions
 		return new PagedList<T>(
 			items, pageNumber, pageSize, totalCount);
 	}
-
-
 }

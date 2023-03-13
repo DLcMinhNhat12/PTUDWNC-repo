@@ -3591,11 +3591,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\MinhNhat12\\Third Years\\HKII\\Advanced Web Application Development\\Lab01\\PTUDWNC-repo\\src\\TipsAndTricks\\TatBlog.WinApp\\TatBlog.WinApp.csproj",
+      "projectUniqueName": "F:\\MinhNhat12\\Third Years\\HKII\\Advanced Web Application Development\\PTUDWNC-repo\\src\\TipsAndTricks\\TatBlog.WinApp\\TatBlog.WinApp.csproj",
       "projectName": "TatBlog.WinApp",
-      "projectPath": "F:\\MinhNhat12\\Third Years\\HKII\\Advanced Web Application Development\\Lab01\\PTUDWNC-repo\\src\\TipsAndTricks\\TatBlog.WinApp\\TatBlog.WinApp.csproj",
+      "projectPath": "F:\\MinhNhat12\\Third Years\\HKII\\Advanced Web Application Development\\PTUDWNC-repo\\src\\TipsAndTricks\\TatBlog.WinApp\\TatBlog.WinApp.csproj",
       "packagesPath": "C:\\Users\\MN12-LAP\\.nuget\\packages\\",
-      "outputPath": "F:\\MinhNhat12\\Third Years\\HKII\\Advanced Web Application Development\\Lab01\\PTUDWNC-repo\\src\\TipsAndTricks\\TatBlog.WinApp\\obj\\",
+      "outputPath": "F:\\MinhNhat12\\Third Years\\HKII\\Advanced Web Application Development\\PTUDWNC-repo\\src\\TipsAndTricks\\TatBlog.WinApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\MN12-LAP\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3612,14 +3612,14 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "F:\\MinhNhat12\\Third Years\\HKII\\Advanced Web Application Development\\Lab01\\PTUDWNC-repo\\src\\TipsAndTricks\\TatBlog.Core\\TatBlog.Core.csproj": {
-              "projectPath": "F:\\MinhNhat12\\Third Years\\HKII\\Advanced Web Application Development\\Lab01\\PTUDWNC-repo\\src\\TipsAndTricks\\TatBlog.Core\\TatBlog.Core.csproj"
+            "F:\\MinhNhat12\\Third Years\\HKII\\Advanced Web Application Development\\PTUDWNC-repo\\src\\TipsAndTricks\\TatBlog.Core\\TatBlog.Core.csproj": {
+              "projectPath": "F:\\MinhNhat12\\Third Years\\HKII\\Advanced Web Application Development\\PTUDWNC-repo\\src\\TipsAndTricks\\TatBlog.Core\\TatBlog.Core.csproj"
             },
-            "F:\\MinhNhat12\\Third Years\\HKII\\Advanced Web Application Development\\Lab01\\PTUDWNC-repo\\src\\TipsAndTricks\\TatBlog.Data\\TatBlog.Data.csproj": {
-              "projectPath": "F:\\MinhNhat12\\Third Years\\HKII\\Advanced Web Application Development\\Lab01\\PTUDWNC-repo\\src\\TipsAndTricks\\TatBlog.Data\\TatBlog.Data.csproj"
+            "F:\\MinhNhat12\\Third Years\\HKII\\Advanced Web Application Development\\PTUDWNC-repo\\src\\TipsAndTricks\\TatBlog.Data\\TatBlog.Data.csproj": {
+              "projectPath": "F:\\MinhNhat12\\Third Years\\HKII\\Advanced Web Application Development\\PTUDWNC-repo\\src\\TipsAndTricks\\TatBlog.Data\\TatBlog.Data.csproj"
             },
-            "F:\\MinhNhat12\\Third Years\\HKII\\Advanced Web Application Development\\Lab01\\PTUDWNC-repo\\src\\TipsAndTricks\\TatBlog.Services\\TatBlog.Services.csproj": {
-              "projectPath": "F:\\MinhNhat12\\Third Years\\HKII\\Advanced Web Application Development\\Lab01\\PTUDWNC-repo\\src\\TipsAndTricks\\TatBlog.Services\\TatBlog.Services.csproj"
+            "F:\\MinhNhat12\\Third Years\\HKII\\Advanced Web Application Development\\PTUDWNC-repo\\src\\TipsAndTricks\\TatBlog.Services\\TatBlog.Services.csproj": {
+              "projectPath": "F:\\MinhNhat12\\Third Years\\HKII\\Advanced Web Application Development\\PTUDWNC-repo\\src\\TipsAndTricks\\TatBlog.Services\\TatBlog.Services.csproj"
             }
           }
         }
