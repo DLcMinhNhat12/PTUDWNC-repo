@@ -36,6 +36,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUG9zdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[F:/MinhNhat12/Third Years/HKII/Advanced Web Application Development/Lab03/2014476-Lab03-Homework/TatBlog.WebApp/Areas/Admin/Views/Posts/_PostFilterPane.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUG9zdHNcX1Bvc3RGaWx0ZXJQYW5lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [F:/MinhNhat12/Third Years/HKII/Advanced Web Application Development/Lab03/2014476-Lab03-Homework/TatBlog.WebApp/Areas/Admin/Views/Shared/_AdminLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

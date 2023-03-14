@@ -101,7 +101,7 @@ public class DataSeeder : IDataSeeder
             Email = "johnvu@author.com",
             JoinedDate = new DateTime(2022, 2, 15)
         },
-         new()
+        new()
         {
             FullName = "Dale Carnegie",
             UrlSlug = "how-to-win-friends-and-influence-people",

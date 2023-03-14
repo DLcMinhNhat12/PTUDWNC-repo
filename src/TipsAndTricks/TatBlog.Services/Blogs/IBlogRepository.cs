@@ -33,6 +33,9 @@ namespace TatBlog.Services.Blogs
             bool ShowOnMenu = false,
             CancellationToken cancellationToken = default);
 
+        Task<IList<AuthorItem>> GetAuthorsAsync(
+             CancellationToken cancellationToken = default);
+
         // Lấy danh sách từ khóa/ thẻ và phân theo thamso
         Task<IPagedList<TagItem>> GetPagedTagsAsync(
             IPagingParams pagingParams,
