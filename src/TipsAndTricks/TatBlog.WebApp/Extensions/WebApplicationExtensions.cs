@@ -33,11 +33,7 @@ namespace TatBlog.WebApp.Extensions
         public static WebApplication UseRequestPipeline(
             this WebApplication app)
         {
-            if (app.Environment.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            else
+            if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Blog/Error");
 

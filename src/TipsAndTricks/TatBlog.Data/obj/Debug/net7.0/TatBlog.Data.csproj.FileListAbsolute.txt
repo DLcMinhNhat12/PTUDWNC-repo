@@ -1,0 +1,15 @@
+F:\MinhNhat12\Third Years\HKII\Advanced Web Application Development\Lab03\2014476-Lab03-Homework\TatBlog.Data\bin\Debug\net7.0\TatBlog.Data.deps.json
+F:\MinhNhat12\Third Years\HKII\Advanced Web Application Development\Lab03\2014476-Lab03-Homework\TatBlog.Data\bin\Debug\net7.0\TatBlog.Data.dll
+F:\MinhNhat12\Third Years\HKII\Advanced Web Application Development\Lab03\2014476-Lab03-Homework\TatBlog.Data\bin\Debug\net7.0\TatBlog.Data.pdb
+F:\MinhNhat12\Third Years\HKII\Advanced Web Application Development\Lab03\2014476-Lab03-Homework\TatBlog.Data\bin\Debug\net7.0\TatBlog.Core.dll
+F:\MinhNhat12\Third Years\HKII\Advanced Web Application Development\Lab03\2014476-Lab03-Homework\TatBlog.Data\bin\Debug\net7.0\TatBlog.Core.pdb
+F:\MinhNhat12\Third Years\HKII\Advanced Web Application Development\Lab03\2014476-Lab03-Homework\TatBlog.Data\obj\Debug\net7.0\TatBlog.Data.csproj.AssemblyReference.cache
+F:\MinhNhat12\Third Years\HKII\Advanced Web Application Development\Lab03\2014476-Lab03-Homework\TatBlog.Data\obj\Debug\net7.0\TatBlog.Data.GeneratedMSBuildEditorConfig.editorconfig
+F:\MinhNhat12\Third Years\HKII\Advanced Web Application Development\Lab03\2014476-Lab03-Homework\TatBlog.Data\obj\Debug\net7.0\TatBlog.Data.AssemblyInfoInputs.cache
+F:\MinhNhat12\Third Years\HKII\Advanced Web Application Development\Lab03\2014476-Lab03-Homework\TatBlog.Data\obj\Debug\net7.0\TatBlog.Data.AssemblyInfo.cs
+F:\MinhNhat12\Third Years\HKII\Advanced Web Application Development\Lab03\2014476-Lab03-Homework\TatBlog.Data\obj\Debug\net7.0\TatBlog.Data.csproj.CoreCompileInputs.cache
+F:\MinhNhat12\Third Years\HKII\Advanced Web Application Development\Lab03\2014476-Lab03-Homework\TatBlog.Data\obj\Debug\net7.0\TatBlog.Data.csproj.CopyComplete
+F:\MinhNhat12\Third Years\HKII\Advanced Web Application Development\Lab03\2014476-Lab03-Homework\TatBlog.Data\obj\Debug\net7.0\TatBlog.Data.dll
+F:\MinhNhat12\Third Years\HKII\Advanced Web Application Development\Lab03\2014476-Lab03-Homework\TatBlog.Data\obj\Debug\net7.0\refint\TatBlog.Data.dll
+F:\MinhNhat12\Third Years\HKII\Advanced Web Application Development\Lab03\2014476-Lab03-Homework\TatBlog.Data\obj\Debug\net7.0\TatBlog.Data.pdb
+F:\MinhNhat12\Third Years\HKII\Advanced Web Application Development\Lab03\2014476-Lab03-Homework\TatBlog.Data\obj\Debug\net7.0\ref\TatBlog.Data.dll

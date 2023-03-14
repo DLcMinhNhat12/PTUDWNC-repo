@@ -266,19 +266,6 @@ namespace TatBlog.Services.Blogs
             //	.WhereIf(!string.IsNullOrWhiteSpace(condition.TitleSlug), x => x.UrlSlug == condition.TitleSlug);
         }
 
-        // Tìm kiếm
-        public async Task<Category> FindCategoryBySlugAsync(string slug, CancellationToken cancellationToken = default)
-        {
-            return await _context.Set<Category>()
-                    .FirstOrDefaultAsync(c => c.UrlSlug.Equals(slug), cancellationToken);
-        }
-
-        public async Task<Author> FindAuthorBySlugAsync(string slug, CancellationToken cancellationToken = default)
-        {
-            return await _context.Set<Author>()
-                    .FirstOrDefaultAsync(c => c.UrlSlug.Equals(slug), cancellationToken);
-
-        }
 
     }
 }

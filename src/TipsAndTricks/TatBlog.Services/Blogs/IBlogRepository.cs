@@ -61,11 +61,6 @@ namespace TatBlog.Services.Blogs
             PostQuery condition,
             int pageNumber = 1, int pageSize = 10,
             CancellationToken cancellationToken = default);
-
-        // Tìm kiếm Loại, tác giả
-        Task<Category> FindCategoryBySlugAsync(string slug, CancellationToken cancellationToken = default);
-
-        Task<Author> FindAuthorBySlugAsync(string slug, CancellationToken cancellationToken = default);
     }
 }
 
