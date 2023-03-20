@@ -64,6 +64,13 @@ namespace TatBlog.Services.Blogs
             PostQuery condition,
             int pageNumber = 1, int pageSize = 10,
             CancellationToken cancellationToken = default);
+
+        Task<Post> GetPostByIdAsync(int postId, bool includeDetails = false,
+            CancellationToken cancellationToken = default);
+
+        Task<Post> CreateOrUpdatePostAsync(
+        Post post, IEnumerable<string> tags,
+        CancellationToken cancellationToken = default);
     }
 }
 

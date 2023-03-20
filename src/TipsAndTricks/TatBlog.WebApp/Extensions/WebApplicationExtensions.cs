@@ -1,7 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using NLog;
+using NLog.Web;
 using TatBlog.Data.Contexts;
 using TatBlog.Data.Seeders;
 using TatBlog.Services.Blogs;
+using TatBlog.Services.Media;
+using TatBlog.WebApp.Middlewares;
 
 namespace TatBlog.WebApp.Extensions
 {
@@ -24,8 +28,23 @@ namespace TatBlog.WebApp.Extensions
                     builder.Configuration
                         .GetConnectionString("DefaultConnection")));
 
+            builder.Services.AddScoped<IMediaManager, LocalFileSystemMediaManager>();
             builder.Services.AddScoped<IBlogRepository, BlogRepository>();
             builder.Services.AddScoped<IDataSeeder, DataSeeder>();
+
+            return builder;
+        }
+
+        public static WebApplicationBuilder ConfigureNLog(
+            this WebApplicationBuilder builder)
+        {
+
+            var logger = NLog.LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
+            logger.Debug("init main");
+
+
+            builder.Logging.ClearProviders();
+            builder.Host.UseNLog();
 
             return builder;
         }
@@ -47,6 +66,9 @@ namespace TatBlog.WebApp.Extensions
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            // Thêm middleware để lưu vết người dùng
+            app.UseMiddleware<UserActivityMiddleware>();
 
             return app;
         }

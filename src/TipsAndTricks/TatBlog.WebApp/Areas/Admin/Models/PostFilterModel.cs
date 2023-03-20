@@ -4,6 +4,7 @@ using System.Globalization;
 
 namespace TatBlog.WebApp.Areas.Admin.Models;
 
+// Chức năng xem danh sách bài viết& tìm bài viết
 public class PostFilterModel
 {
     [DisplayName("Từ khóa")]
