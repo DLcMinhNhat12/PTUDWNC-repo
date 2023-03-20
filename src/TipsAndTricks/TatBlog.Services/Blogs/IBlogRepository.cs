@@ -33,6 +33,9 @@ namespace TatBlog.Services.Blogs
             bool ShowOnMenu = false,
             CancellationToken cancellationToken = default);
 
+        Task<IList<AuthorItem>> GetAuthorsAsync(
+             CancellationToken cancellationToken = default);
+
         // Lấy danh sách từ khóa/ thẻ và phân theo thamso
         Task<IPagedList<TagItem>> GetPagedTagsAsync(
             IPagingParams pagingParams,
@@ -62,10 +65,12 @@ namespace TatBlog.Services.Blogs
             int pageNumber = 1, int pageSize = 10,
             CancellationToken cancellationToken = default);
 
-        // Tìm kiếm Loại, tác giả
-        Task<Category> FindCategoryBySlugAsync(string slug, CancellationToken cancellationToken = default);
+        Task<Post> GetPostByIdAsync(int postId, bool includeDetails = false,
+            CancellationToken cancellationToken = default);
 
-        Task<Author> FindAuthorBySlugAsync(string slug, CancellationToken cancellationToken = default);
+        Task<Post> CreateOrUpdatePostAsync(
+        Post post, IEnumerable<string> tags,
+        CancellationToken cancellationToken = default);
     }
 }
 
