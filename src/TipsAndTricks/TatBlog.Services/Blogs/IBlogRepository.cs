@@ -21,9 +21,13 @@ namespace TatBlog.Services.Blogs
             int numPosts,
             CancellationToken cancellationToken = default);
 
-        Task<bool> IsPostSlugExitsedAsync(
-            int postId, string slug,
-            CancellationToken cancellationToken = default);
+        Task<IList<Author>> GetPopularAuthorsAsync(int numAuthor,
+           CancellationToken cancellationToken = default);
+
+
+        Task<bool> IsPostSlugExistedAsync(
+        int postId, string slug,
+        CancellationToken cancellationToken = default);
 
         Task IncreaseViewCountAsync(
             int postId,
@@ -52,12 +56,27 @@ namespace TatBlog.Services.Blogs
             string slug,
             CancellationToken cancellationToken = default);
 
+        Task<IList<Post>> GetRandomArticlesAsync(
+             int numPosts, CancellationToken cancellationToken = default);
+
         // Lấy danh sách tất cả các tag + số bài viết chứa bài đó
         Task<IList<TagItem>> GetAllTagsList(
             CancellationToken cancellationToken = default);
 
         // Xóa 1 tag theo mã
         Task<Tag> RemoveTagsByIdAsync(int removeTag, CancellationToken cancellation = default);
+        // Xóa 1 author theo mã
+        Task<Author> RemoveAuthorsByIdAsync(int authorId, CancellationToken cancellation = default);
+
+
+        //Task DeletePostByIdAsync(
+        //       int id, CancellationToken cancellationToken = default);
+
+        Task<Post> RemovePostsByIdAsync(
+          int posstId, CancellationToken cancellationToken = default);
+        
+        Task<IList<MonthlyPostCountItem>> CountMonthlyPostsAsync(int numMonths,
+        CancellationToken cancellationToken = default);
 
         // Method tìm kiếm phân trang theo các bài viết
         Task<IPagedList<Post>> GetPagedPostsAsync(
@@ -65,12 +84,29 @@ namespace TatBlog.Services.Blogs
             int pageNumber = 1, int pageSize = 10,
             CancellationToken cancellationToken = default);
 
+        // Tìm kiếm phân trang theo tác giả
+        Task<IPagedList<Author>> GetPagedAuthorsAsync(
+           int pageNumber = 1, int pageSize = 10,
+           CancellationToken cancellationToken = default);
+
         Task<Post> GetPostByIdAsync(int postId, bool includeDetails = false,
             CancellationToken cancellationToken = default);
+
+        Task<Author> GetAuthorByIdAsync(int postId,
+            CancellationToken cancellationToken = default);
+
+        // Chức năng tìm Tìm kiếm
+        Task<Category> FindCategoryBySlugAsync(string slug, CancellationToken cancellationToken = default);
+
+        Task<bool> TogglePublishedFlagAsync(
+        int postId, CancellationToken cancellationToken = default);
 
         Task<Post> CreateOrUpdatePostAsync(
         Post post, IEnumerable<string> tags,
         CancellationToken cancellationToken = default);
+
+        Task<Author> CreateOrUpdateAuthorAsync(
+        Author author, CancellationToken cancellationToken = default);
     }
 }
 

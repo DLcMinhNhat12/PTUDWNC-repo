@@ -20,7 +20,8 @@ public class PostsController : Controller
     private readonly IMapper _mapper;
     private readonly IValidator<PostEditModel> _postValidator;
 
-    public PostsController(ILogger<PostsController> logger,IBlogRepository blogRepository, IMapper mapper, IMediaManager mediaManager)
+    public PostsController(ILogger<PostsController> logger, IBlogRepository blogRepository, 
+        IMapper mapper, IMediaManager mediaManager)
     {
         _logger = logger;
         _blogRepository = blogRepository;
@@ -71,28 +72,11 @@ public class PostsController : Controller
     [HttpGet]
     public async Task<IActionResult> Edit(int id = 0)
     {
-        // Nếu ID = 0 <=> Thêm bài viết mới
         // Nếu ID . 0 <=> Đọc data của bài viết từ CSDL
-
-        var post = id > 0 ? await _blogRepository.GetPostByIdAsync(
-            id, true) : null;
-
-        //var post = id > 0 ? await _blogRepository.GetPostByIdAsync(id.Value) : null;
-        //var model = new PostEditModel();
-
-        //if (post != null)
-        //{
-        //    model.Id = post.Id;
-        //    model.AuthorId = post.AuthorId;
-        //    model.CategoryId = post.CategoryId;
-        //    model.Title = post.Title;
-        //    model.ShortDescription = post.ShortDescription;
-        //    model.Description = post.Description;
-        //    model.Meta = post.Meta;
-        //    model.ImageUrl = post.ImageUrl;
-        //    model.Published = post.Published;
-        //    model.SelectedTags = string.Join("\r\n", post.Tags.Select(t => t.Name));
-        //}
+        // Nếu ID = 0 <=> Thêm bài viết mới
+        var post = id > 0
+            ? await _blogRepository.GetPostByIdAsync(id, true)
+            : null;
 
         // Tạo view model từ data bài viết
         var model = post == null
@@ -106,41 +90,37 @@ public class PostsController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> Edit(
-        PostEditModel model)
+    public async Task<IActionResult> Edit(PostEditModel model)
     {
-        var validationResult = await this._postValidator.ValidateAsync(model);
+         var validationResult = await _postValidator.ValidateAsync(model);
+            if (!validationResult.IsValid)
+            {
+                validationResult.AddToModelState(ModelState);
+            }
 
-        if (!validationResult.IsValid)
-        {
-            validationResult.AddToModelState(ModelState);
-        }
+            if (!ModelState.IsValid)
+            {
+                await PopulatePostEditModelAsync(model);
+                return View(model);
+            }
 
-        if (!ModelState.IsValid)
-        {
-            await PopulatePostEditModelAsync(model);
-            return View(model);
-        }
+            var post = model.Id > 0
+                ? await _blogRepository.GetPostByIdAsync(model.Id) : null;
 
-        var post = model.Id > 0
-            ? await _blogRepository.GetPostByIdAsync(model.Id)
-            : null;
 
-        if (post == null)
-        {
-            post = _mapper.Map<Post>(model);
+            if (post == null)
+            {
+                post = _mapper.Map<Post>(model);
 
-            post.Id = 0;
-
-            post.PostedDate = DateTime.Now;
-        }
-        else
-        {
-            _mapper.Map(model, post);
-
-            post.Category = null;
-            post.ModifiedDate = DateTime.Now;
-        }
+                post.Id = 0;
+                post.PostedDate = DateTime.Now;
+            }
+            else
+            {
+                _mapper.Map(model, post);
+                post.Category = null;
+                post.ModifiedDate = DateTime.Now;
+            }
 
         // Nếu người dùng có upload hình ảnh minh họa cho bài viết
         if (model.ImageFile?.Length > 0)
@@ -170,14 +150,16 @@ public class PostsController : Controller
         int id, string urlSlug)
     {
         var slugExisted = await _blogRepository
-            .IsPostSlugExitsedAsync(id, urlSlug);
+            .IsPostSlugExistedAsync(id, urlSlug);
 
         return slugExisted
             ? Json($"Slug 'urlSlug' đã được sử dụng")
             : Json(true);
     }
 
-    public async Task<IActionResult> Index(PostFilterModel model)
+    public async Task<IActionResult> Index(PostFilterModel model, 
+        int pageNumber = 1,
+        int pageSize = 10)
     {
         _logger.LogInformation("Tạo điều kiện truy vấn");
 
@@ -188,12 +170,26 @@ public class PostsController : Controller
         _logger.LogInformation("Lấy danh sách bài viết từ CSDL");
 
         ViewBag.PostsList = await _blogRepository
-            .GetPagedPostsAsync(postQuery, 1, 10);
+            .GetPagedPostsAsync(postQuery, pageNumber, pageSize);
 
         _logger.LogInformation("Chuẩn bị dữ liệu cho ViewModel");
 
         await PopulatePostFilterModelAsync(model);
 
         return View(model);
+    }
+
+    public async Task<IActionResult> ChangePostPublishedState(int id)
+    {
+        await _blogRepository.TogglePublishedFlagAsync(id);
+
+        return RedirectToAction(nameof(Index));
+    }
+
+    public async Task<IActionResult> DeletePost(int id)
+    {
+        await _blogRepository.RemovePostsByIdAsync(id);
+
+        return RedirectToAction(nameof(Index));
     }
 }
