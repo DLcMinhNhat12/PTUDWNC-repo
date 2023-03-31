@@ -43,25 +43,6 @@ namespace TatBlog.Services.Blogs
                 .ToListAsync(cancellationToken);
         }
 
-        public async Task<IList<AuthorItem>> GetAuthorsAsync(
-            CancellationToken cancellationToken = default)
-        {
-            return await _context.Set<Author>()
-                .OrderBy(a => a.FullName)
-                .Select(a => new AuthorItem()
-                {
-                    Id = a.Id,
-                    FullName = a.FullName,
-                    Email = a.ToString(),
-                    JoinedDate = a.JoinedDate,
-                    ImageUrl = a.ImageUrl,
-                    UrlSlug = a.UrlSlug,
-                    Notes = a.Notes,
-                    PostCount = a.Posts.Count(p => p.Published)
-                })
-                .ToListAsync(cancellationToken);
-        }
-
         public async Task<Post> GetPostAsync(
             int year,
             int month,
@@ -102,7 +83,17 @@ namespace TatBlog.Services.Blogs
                 .ToListAsync(cancellationToken);
         }
 
-        public async Task<bool> IsPostSlugExitsedAsync(
+        // TOP tác giả có nhiều bài viết nhất
+        public async Task<IList<Author>> GetPopularAuthorsAsync(int numAuthor,
+            CancellationToken cancellationToken = default)
+        {
+            return await _context.Set<Author>()
+                .OrderByDescending(p => p.Posts)
+                .Take(numAuthor)
+                .ToListAsync(cancellationToken);
+        }
+
+        public async Task<bool> IsPostSlugExistedAsync(
             int postId, string slug,
             CancellationToken cancellationToken = default)
         {
@@ -148,6 +139,16 @@ namespace TatBlog.Services.Blogs
                 .FirstOrDefaultAsync(cancellationToken);
         }
 
+        // Hiển thị TOP 5 bài viết ngẫu nhiên. Khi người dùng click "Xem chi tiết".
+        public async Task<IList<Post>> GetRandomArticlesAsync(
+        int numPosts, CancellationToken cancellationToken = default)
+        {
+            return await _context.Set<Post>()
+                .OrderBy(x => Guid.NewGuid())
+                .Take(numPosts)
+                .ToListAsync(cancellationToken);
+        }
+
         public async Task<Post> GetPostByIdAsync(
         int postId, bool includeDetails = false,
         CancellationToken cancellationToken = default)
@@ -163,6 +164,7 @@ namespace TatBlog.Services.Blogs
                 .Include(x => x.Tags)
                 .FirstOrDefaultAsync(x => x.Id == postId, cancellationToken);
         }
+
 
         public async Task<IList<TagItem>> GetAllTagsList(CancellationToken cancellationToken = default)
         {
@@ -198,6 +200,50 @@ namespace TatBlog.Services.Blogs
             return tag;
         }
 
+        public async Task<bool> DeletePostByIdAsync(
+             int postId, CancellationToken cancellationToken = default)
+        {
+            return await _context.Set<Post>()
+             .Where(x => x.Id == postId)
+             .ExecuteDeleteAsync(cancellationToken) > 0;
+        }
+
+        public async Task<Author> RemoveAuthorsByIdAsync(
+            int authorId, CancellationToken cancellationToken = default)
+        {
+            var author = await _context.Set<Author>()
+                .FirstOrDefaultAsync(t => t.Id == authorId, cancellationToken);
+
+            if (author != null)
+            {
+                _context.Set<Author>().Remove(author);
+                await _context.SaveChangesAsync(cancellationToken);
+                Console.WriteLine("Đã xóa tác giả!");
+            }
+            else
+            {
+                Console.WriteLine("Tác giả không tồn tại!");
+            }
+            return author;
+        }
+
+        public async Task<IList<MonthlyPostCountItem>> CountMonthlyPostsAsync(int numMonths,
+            CancellationToken cancellationToken = default)
+        {
+            return await _context.Set<Post>()
+                .Where(x => x.Published)
+                .GroupBy(x => new { x.PostedDate.Year, x.PostedDate.Month })
+                .Select(g => new MonthlyPostCountItem()
+                {
+                    Year = g.Key.Year,
+                    Month = g.Key.Month,
+                    PostCount = g.Count(x => x.Published)
+                })
+                .OrderByDescending(x => x.Year)
+                .ThenByDescending(x => x.Month)
+                .ToListAsync(cancellationToken);
+        }
+
         // Câu 1s
         public async Task<IPagedList<Post>> GetPagedPostsAsync(
            PostQuery condition,
@@ -209,6 +255,30 @@ namespace TatBlog.Services.Blogs
                 pageNumber, pageSize,
                 nameof(Post.PostedDate), "DESC",
                 cancellationToken);
+        }
+
+        public async Task<IPagedList<T>> GetPagedPostsAsync<T>(PostQuery condition, IPagingParams pagingParams,
+            Func<IQueryable<Post>, IQueryable<T>> mapper)
+        {
+            var posts = FilterPosts(condition);
+
+            return await mapper(posts)
+                .ToPagedListAsync(pagingParams);
+        }    
+
+
+        // Thay đổi trạng thái của bài viết
+        public async Task<bool> TogglePublishedFlagAsync(
+        int postId, CancellationToken cancellationToken = default)
+        {
+            var post = await _context.Set<Post>().FindAsync(postId);
+
+            if (post is null) return false;
+
+            post.Published = !post.Published;
+            await _context.SaveChangesAsync(cancellationToken);
+
+            return post.Published;
         }
 
         private IQueryable<Post> FilterPosts(PostQuery condition)
@@ -301,6 +371,15 @@ namespace TatBlog.Services.Blogs
             //	.WhereIf(!string.IsNullOrWhiteSpace(condition.TitleSlug), x => x.UrlSlug == condition.TitleSlug);
         }
 
+        // Tìm kiếm chuyên mục
+        public async Task<Category> FindCategoryBySlugAsync(string slug,
+            CancellationToken cancellationToken = default)
+        {
+            return await _context.Set<Category>()
+                .FirstOrDefaultAsync(c => c.UrlSlug == slug, cancellationToken);
+        }
+
+
         // Tạo mới hoặc update bài viết
         public async Task<Post> CreateOrUpdatePostAsync(
         Post post, IEnumerable<string> tags,
@@ -349,6 +428,24 @@ namespace TatBlog.Services.Blogs
             await _context.SaveChangesAsync(cancellationToken);
 
             return post;
+        }
+
+        // Tạo mới hoặc update tác giả
+        public async Task<Author> CreateOrUpdateAuthorAsync(Author author,
+            CancellationToken cancellationToken = default)
+        {
+            if (author.Id > 0)
+            {
+                _context.Set<Author>().Update(author);
+            }
+            else
+            {
+                _context.Set<Author>().Add(author);
+            }
+
+            await _context.SaveChangesAsync(cancellationToken);
+
+            return author;
         }
     }
 }

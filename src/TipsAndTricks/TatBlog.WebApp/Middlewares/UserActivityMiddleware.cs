@@ -1,29 +1,28 @@
-﻿using NuGet.Protocol.Plugins;
-
-namespace TatBlog.WebApp.Middlewares;
-
-// Lưu lại quá trình di chuyển giữa các trang của người dùng
-public class UserActivityMiddleware
+﻿namespace TatBlog.WebApp.Middlewares
 {
-    private readonly RequestDelegate _next;
-    private readonly ILogger<UserActivityMiddleware> _logger;
-
-    public UserActivityMiddleware(
-        RequestDelegate next,
-        ILogger<UserActivityMiddleware> logger )
+    // Lưu lại quá trình di chuyển giữa các trang của người dùng
+    public class UserActivityMiddleware
     {
-        _next = next;
-        _logger = logger;
-    }
+        public readonly RequestDelegate _next;
+        public readonly ILogger<UserActivityMiddleware> _Logger;
 
-    public async Task Invoke(HttpContext context)
-    {
-        _logger.LogInformation(
-            "{Time:yyyy-MM-dd HH:mm:ss} - IP: {IpAddress} - Path: {Url}",
-            DateTime.Now, 
-            context.Connection.RemoteIpAddress?.ToString(),
-            context.Request.Path);
+        public UserActivityMiddleware(
+            RequestDelegate next,
+            ILogger<UserActivityMiddleware> logger)
+        {
+            _next = next;
+            _Logger = logger;
+        }
 
-        await _next(context);
+        public async Task Invoke(HttpContext context)
+        {
+            _Logger.LogInformation(
+                "{Time:yyy-MM-dd MM:mm:ss} - IP{IpAdress} - Path: {Url}",
+                DateTime.Now,
+                context.Connection.RemoteIpAddress?.ToString(),
+                context.Request.Path);
+
+            await _next(context);
+        }
     }
 }

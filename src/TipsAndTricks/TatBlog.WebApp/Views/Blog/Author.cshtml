@@ -2,23 +2,26 @@
 
 @{
     ViewData["PageTitle"] = "Tác giả";
+
+    var author = new Author();
+    if (Model != null && Model.Count > 0)
+    {
+        author = (Model[0].Author as Author);
+    }
 }
 
 <div class="p-4">
-    @if (!string.IsNullOrWhiteSpace(ViewBag.Author))
+    @if (!string.IsNullOrWhiteSpace(author.FullName))
     {
         <h3 class="text-primary mb-3">
-            Những bào viết của tác giả '@ViewBag.Author'
+            Những bài viết thuộc tác giả '@author.FullName'
         </h3>
     }
-    
-    @if (Model.Count() == 0)
-    {
-        <p>Không có bài viết từ tác giả '@ViewBag.Author'</p>
-    }
+
     @foreach (var postItem in Model)
     {
-        <partial name="_PostList" model="postItem" />
+        <partial name="_PostList" model="postItem"></partial>
     }
-        <partial name="_Pager" model="@Model" />
+
+    <partial name="_Pager" model="@Model"></partial>
 </div>
