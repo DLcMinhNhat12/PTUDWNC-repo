@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 using SlugGenerator;
 using TatBlog.Core.Contracts;
 using TatBlog.Core.DTO;
@@ -11,10 +12,11 @@ namespace TatBlog.Services.Blogs
     public class BlogRepository : IBlogRepository
     {
         private readonly BlogDbContext _context;
-
-        public BlogRepository(BlogDbContext context)
+        private readonly IMemoryCache _memoryCache;
+        public BlogRepository(BlogDbContext context, IMemoryCache memoryCache)
         {
             _context = context;
+            _memoryCache = memoryCache;
         }
 
         // Lấy ds chuyên mục và số lượng bài viết
@@ -42,6 +44,18 @@ namespace TatBlog.Services.Blogs
                 })
                 .ToListAsync(cancellationToken);
         }
+
+        public async Task<Post> GetCachedPostByIdAsync(int postId)
+        {
+            return await _memoryCache.GetOrCreateAsync(
+            $"post.by-id.{postId}",
+            async (entry) =>
+            {
+                entry.AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(30);
+                return await GetPostByIdAsync(postId);
+            });
+        }
+
 
         public async Task<Post> GetPostAsync(
             int year,

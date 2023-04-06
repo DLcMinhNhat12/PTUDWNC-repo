@@ -12,6 +12,8 @@ namespace TatBlog.Services.Blogs
         // tìm bài viết có tên định danh là slug
         // và đăng vào tháng, năm?
 
+        Task<Post> GetCachedPostByIdAsync(int postId);
+
         Task<Post> GetPostAsync(
             int year,
             int month,

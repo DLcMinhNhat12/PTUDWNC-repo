@@ -18,7 +18,10 @@ var app = builder.Build();
 {
     app.SetupRequestPipeline();
 
+    // Configure API endpoints
     app.MapAuthorEndpoints();
+
+    app.MapPostEndpoints();
 
     app.Run();
 }
