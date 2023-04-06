@@ -22,6 +22,8 @@
                 <th>Tác giả</th>
                 <th>Chủ đề</th>
                 <th>Xuất bản</th>
+                <th>Xóa bài viết</th>
+
             </tr>
         </thead>
         <tbody>
@@ -29,11 +31,12 @@
             {
                 <tr>
                     <td>
-                        <a asp-area="Admin"
+                        <a class="no-underline"
+                           class="text-bold"
+                           asp-area="Admin"
                            asp-controller="Posts"
                            asp-action="Edit"
-                           asp-route-id="@post.Id"
-                           class="text-bold">
+                           asp-route-id="@post.Id">
                             @post.Title
                         </a>
 
@@ -48,16 +51,43 @@
                         @post.Category.Name
                     </td>
                     <td>
-                        @(post.Published ? "Có" : "Không")
+                        <form method="post"
+                              enctype="multipart/form-data"
+                              asp-area="Admin"
+                              asp-controller="Posts"
+                              asp-route-id="@post.Id"
+                              asp-action="ChangePostPublishedState">
+                            <input type="hidden" name="postId" value="@post.Id" />
+                            <div class="form-check">
+                                <input class="form-check-input"
+                                       type="checkbox"
+                                       onChange="this.form.submit()"
+                                @(post.Published ? "Có" : "Không") />
+                            </div>
+                        </form>
+                    </td>
+
+                    <td>
+                        <a asp-area="Admin"
+                           asp-controller="Posts"
+                   asp-action="DeletePost"
+                           asp-route-id="@post.Id"
+                           class="btn btn-danger"
+                           OnClick="return confirm('Bạn có chắc chắn muốn xóa bài viết này chứ?')">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </a>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
-}else
+}
+else
 {
     <h1 class="text-danger">
         Không tìm thấy bài viết nào
     </h1>
 }
+
+<partial name="_Pager" model="@postsList" />
 

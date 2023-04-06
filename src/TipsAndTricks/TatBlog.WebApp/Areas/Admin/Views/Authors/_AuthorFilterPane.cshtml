@@ -1,0 +1,37 @@
+﻿@*Tạo Form tìm kiếm*@
+
+@model TatBlog.WebApp.Areas.Admin.Models.AuthorFilterModel
+
+<form asp-area="Admin"
+      asp-controller="Authors"
+      asp-action="Index"
+      method="get"
+      class="row gy-2 gx-3 align-item-center">
+    <div class="col-auto">
+        <label class="visually-hidden" asp-for="Keyword"></label>
+        <input type="text"
+               class="form-control"
+               asp-for="Keyword"
+               placeholder="Nhập từ khóa..." />
+    </div>
+
+    <div class="col-auto">
+        <button type="submit" class="btn btn-primary">
+            Tìm/Lọc
+        </button>
+
+        <a asp-area="Admin"
+           asp-controller="Authors"
+           asp-action="Edit"
+           class="btn btn-success">
+            Thêm mới
+        </a>
+    </div>
+
+    <div class="col-auto">
+        <label class="visually-hidden" asp-for="Email"></label>
+        <input type="text" class="form-control" placeholder="Nhập email tác giả ..." asp-for="Email">
+    </div>
+</form>
+
+

@@ -18,7 +18,14 @@
             <div class="col-md-8">
                 <div class="card-body">
                     <h5 class="card-title">
-                        @Model.Title
+                        <a class="text-decoration-none"
+                           asp-action="Post"
+                           asp-route-year="@Model.PostedDate.Year"
+                           asp-route-month="@Model.PostedDate.Month"
+                           asp-route-day="@Model.PostedDate.Day"
+                           asp-route-slug="@Model.UrlSlug">
+                            @Model.Title
+                        </a>
                     </h5>
                     <p class="card-text">
                         <small class="text-muted">
@@ -38,12 +45,12 @@
                             Chủ đề:
                         </small>
                         <span class="text-primary">
-                               <a asp-controller="Blog"
+                            <a asp-controller="Blog"
                                asp-action="Category"
                                asp-route-slug="@Model.Category.UrlSlug"
                                class="text-decoration-none"
                                title="@Model.Category.Description">
-                            @Model.Category.Name
+                                @Model.Category.Name
                             </a>
                         </span>
                     </p>
